@@ -87,10 +87,10 @@ Here is the folder structure for the Flutter project:
 ### b. Final Flutter UI
 
 ### Home Page: 
-![Light Mode](https://github.com/sahan026/images/blob/main/allbooks.png)
+![Light Mode](https://github.com/sahan026/images/blob/main/Screenshot%202025-02-24%20130808.png)
 
-### Book Details Page: 
-![Light Mode](https://github.com/sahan026/images/blob/main/bookdetail.png)
+### Author Details Page: 
+![Light Mode](https://github.com/sahan026/images/blob/main/Screenshot%202025-02-24%20130915.png)
 
 ---
 
