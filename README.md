@@ -59,14 +59,18 @@ Here is the folder structure for the Flutter project:
 
 ```plaintext
 - lib/
-  - main.dart           # Entry point for the app, auto-navigates to test.dart
+  - main.dart           # Entry point for the app
 - assets/
-  - book1.jpg
-  - book2.jpg
-  - book3.jpg
-  - book4.jpg
-  - book5.jpg
-  - book6.jpg
+  - abraham.jpg
+  - angelous.jpg
+  - confucius.jpg
+  - einstein.jpg
+  - gandhi.jpg
+  - jobs.jpg
+  - lennon.jpg
+  - mandela.jpg
+  - oprah.jpg
+  - socrates.jpg
 - pubspec.yaml          # Flutter project dependencies and asset references
 ```
 
