@@ -39,17 +39,15 @@ Here is the widget hierarchy of the layout used in the app:
 
 ## 2. UI Implementation
 
-### Books Layout:
+### Quota Layout:
 
 The layout consists of four main elements arranged inside a `Column` widget. These elements are:
 
-1. Title of the book (`Text` widget)
-2. Author of the book (`Text` widget)
-3. Price of the book (`Text` widget)
-4. Book Image (`Image` widget)
-5. One `IconButton` widget placed inside a `Row` to perform the "add to cart" action.
-
-I used a `Card` widget to encapsulate the entire layout, providing a clean visual appearance.
+1. Category of the quote (`Text` widget)
+2. Author of the quote (`Text` widget)
+3. text of the quote (`Text` widget)
+4. Author Imagepath (`Image` widget)
+5. Author details (`Text` widget)
 
 ---
 
