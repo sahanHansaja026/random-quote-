@@ -37,6 +37,72 @@ final List<Quote> quotes = [
         "From his 2005 Stanford commencement address, Jobs emphasized passion as key to professional success.",
     imagePath: "assets/jobs.jpg",
   ),
+  Quote(
+    text:
+        "People will forget what you said, people will forget what you did, but people will never forget how you made them feel.",
+    author: "Maya Angelou",
+    category: "Inspirational",
+    details:
+        "From Angelou's memoir, highlighting the lasting impact of emotional connections in human interactions.",
+    imagePath: "assets/angelou.jpg",
+  ),
+  Quote(
+    text: "It always seems impossible until it's done.",
+    author: "Nelson Mandela",
+    category: "Inspirational",
+    details:
+        "Often cited in discussions about perseverance during South Africa's anti-apartheid struggle.",
+    imagePath: "assets/mandela.jpg",
+  ),
+  Quote(
+    text: "You become what you believe.",
+    author: "Oprah Winfrey",
+    category: "Career",
+    details:
+        "From Winfrey's leadership speeches, emphasizing the power of self-belief in professional growth.",
+    imagePath: "assets/oprah.jpg",
+  ),
+  Quote(
+    text: "Life is what happens when you're busy making other plans.",
+    author: "John Lennon",
+    category: "Life",
+    details:
+        "Popularized in Lennon's song 'Beautiful Boy', reflecting on life's unpredictability.",
+    imagePath: "assets/lennon.jpg",
+  ),
+  Quote(
+    text:
+        "In the end, it's not the years in your life that count. It's the life in your years.",
+    author: "Abraham Lincoln",
+    category: "Life",
+    details:
+        "Often attributed to Lincoln, emphasizing quality over quantity of experiences.",
+    imagePath: "assets/lincoln.jpg",
+  ),
+  Quote(
+    text: "The only true wisdom is in knowing you know nothing.",
+    author: "Socrates",
+    category: "Wisdom",
+    details:
+        "Foundational concept in Socratic philosophy, demonstrating humility in knowledge.",
+    imagePath: "assets/socrates.jpg",
+  ),
+  Quote(
+    text: "It does not matter how slowly you go as long as you do not stop.",
+    author: "Confucius",
+    category: "Wisdom",
+    details:
+        "From the Analects of Confucius, advocating persistent progress over speed.",
+    imagePath: "assets/confucius.jpg",
+  ),
+  Quote(
+    text: "Imagination is more important than knowledge.",
+    author: "Albert Einstein",
+    category: "Wisdom",
+    details:
+        "From a 1929 interview, highlighting Einstein's view on creative thinking in problem-solving.",
+    imagePath: "assets/einstein.jpg",
+  ),
 ];
 
 final List<String> categories = ["Inspirational", "Career", "Life", "Wisdom"];
@@ -47,6 +113,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false, // Removes the debug label
       title: 'Quote App',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: const QuoteScreen(),
@@ -108,19 +175,6 @@ class _QuoteScreenState extends State<QuoteScreen> {
         ),
         actions: [
           DropdownMenu<String>(
-            menuStyle: MenuStyle(
-              backgroundColor: WidgetStateProperty.all(Colors.deepPurple[50]),
-              surfaceTintColor: WidgetStateProperty.all(Colors.transparent),
-              elevation: WidgetStateProperty.all(8),
-              shadowColor:
-                  WidgetStateProperty.all(Colors.purple.withOpacity(0.1)),
-              shape: WidgetStateProperty.all(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                  side: const BorderSide(color: Colors.deepPurple),
-                ),
-              ),
-            ),
             initialSelection: categories.first,
             onSelected: _updateCategory,
             dropdownMenuEntries: categories.map((String category) {
@@ -179,7 +233,31 @@ class _QuoteScreenState extends State<QuoteScreen> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _getNewQuote,
-              child: const Text('New Quote'),
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.indigo,
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 30.0,
+                    vertical: 18,
+                  ),
+                  elevation: 8,
+                  shadowColor: Colors.indigo,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  )),
+              child: const Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.auto_awesome,
+                    size: 22.0,
+                  ),
+                  SizedBox(
+                    width: 12,
+                  ),
+                  Text('Generate New Quote'),
+                ],
+              ),
             ),
           ],
         ),
