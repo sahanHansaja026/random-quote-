@@ -165,31 +165,50 @@ class _QuoteScreenState extends State<QuoteScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 1, 59, 251),
+        backgroundColor: const Color(0xFF013BFB), // Deep blue for a modern look
+        elevation: 4, // Adds subtle shadow
         title: const Text(
           'Daily Quote',
           style: TextStyle(
             color: Colors.white,
+            fontSize: 22,
             fontWeight: FontWeight.bold,
           ),
         ),
         actions: [
-          DropdownMenu<String>(
-            initialSelection: categories.first,
-            onSelected: _updateCategory,
-            dropdownMenuEntries: categories.map((String category) {
-              return DropdownMenuEntry<String>(
-                value: category,
-                label: category,
-                style: ButtonStyle(
-                  textStyle: WidgetStateProperty.all(
-                    const TextStyle(
-                        color: Color.fromARGB(255, 237, 237, 237),
-                        fontWeight: FontWeight.bold),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white, // White background for dropdown
+                borderRadius: BorderRadius.circular(10), // Rounded corners
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black26,
+                    blurRadius: 4,
+                    offset: Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: DropdownMenu<String>(
+                initialSelection: categories.first,
+                onSelected: _updateCategory,
+                dropdownMenuEntries: categories.map((String category) {
+                  return DropdownMenuEntry<String>(
+                    value: category,
+                    label: category,
+                  );
+                }).toList(),
+                menuStyle: MenuStyle(
+                  backgroundColor: WidgetStateProperty.all(Colors.white),
+                  shape: WidgetStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
                   ),
                 ),
-              );
-            }).toList(),
+              ),
+            ),
           ),
         ],
       ),
