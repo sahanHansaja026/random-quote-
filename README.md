@@ -20,17 +20,44 @@
 Here is the widget hierarchy of the layout used in the app:
 
 ```plaintext
-- MaterialApp
-  - Scaffold
-    - AppBar
-    - Body (ListView)
-      - Column
-        - Text (Title)
-        - Text (Author)
-        - Text (Price)
-        - Image (Book Image)
-        - Row
-          - IconButton (for "add to cart" action)
+MyApp (StatelessWidget)
+└── MaterialApp
+    ├── ThemeData
+    └── QuoteScreen (StatefulWidget)
+        ├── Scaffold
+        │   ├── AppBar
+        │   │   ├── Title (Text: "Daily Quote")
+        │   │   ├── Actions (DropdownMenu)
+        │   ├── Body (Padding)
+        │   │   ├── Column
+        │   │   │   ├── GestureDetector (Navigates to QuoteDetailScreen)
+        │   │   │   │   └── Card
+        │   │   │   │       └── Padding
+        │   │   │   │           └── Column
+        │   │   │   │               ├── Text (Quote text)
+        │   │   │   │               ├── SizedBox
+        │   │   │   │               ├── Text (Quote author)
+        │   │   │   ├── SizedBox
+        │   │   │   ├── ElevatedButton (Generate New Quote)
+        │   │   │   │   ├── Row
+        │   │   │   │   │   ├── Icon (auto_awesome)
+        │   │   │   │   │   ├── SizedBox
+        │   │   │   │   │   ├── Text ("Generate New Quote")
+        │   │   │   │   └── Button Style (RoundedRectangleBorder)
+        │   │   │
+        │   │   └── QuoteDetailScreen (Navigated on Tap)
+        │   │       ├── Scaffold
+        │   │       │   ├── AppBar (Title: "About {author}")
+        │   │       │   ├── Body (SingleChildScrollView)
+        │   │       │   │   ├── Padding
+        │   │       │   │   │   ├── Column
+        │   │       │   │   │   │   ├── Conditional Container (Image)
+        │   │       │   │   │   │   ├── SizedBox
+        │   │       │   │   │   │   ├── Text (Author Name)
+        │   │       │   │   │   │   ├── SizedBox
+        │   │       │   │   │   │   ├── Text ("Details:")
+        │   │       │   │   │   │   ├── Text (Quote Details)
+
 ```
 
 (Include a visual diagram if possible.)
